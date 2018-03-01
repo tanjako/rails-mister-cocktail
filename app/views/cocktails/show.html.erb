@@ -1,5 +1,24 @@
-<h1>These are the details of the new restaurant:</h1>
+<!-- list the cocktail with details -->
+<h2><%= @cocktail.name %></h2>
 
-<h3><%= @cocktail.name %></h3>
+<!-- list all doses -->
+<h3>This cocktail has: </h3>
+<% @cocktail.doses.each do |dose| %>
+<li><%= dose.ingredient.name %> | <%= dose.description %> | <%= link_to "Delete", dose_path(dose), method: :delete %>
+</li>
+<% end %>
 
-path new_restaurant_review_path doesn't work
+<!-- add a new description -->
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <p>Add ingredients and quantity:</p>
+  <%= f.input :description %>
+  <%= f.input :ingredient_id, collection: Ingredient.all %>
+  <%= f.submit "Submit " %>
+  <p></p>
+<% end %>
+
+<p></p>
+<p><%= link_to 'Back', cocktails_path %></p>
+
+
+<!-- form for looks for 2 parameters in def show!  -->

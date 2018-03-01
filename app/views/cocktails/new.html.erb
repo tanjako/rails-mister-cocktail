@@ -1,3 +1,11 @@
-<h1>New cocktail</h1>
+<h3>New Cocktail:</h3>
 
-<%= render 'form', cocktail: @cocktail %>
+<%= simple_form_for (@cocktail) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<p></p>
+<p><%= link_to 'Go back to the cocktails list', cocktails_path %></p>
+
+<!-- adds new cocktail name and leads to the form to get the dose (description-ingredients-pair) via show page -->
