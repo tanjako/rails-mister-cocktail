@@ -1,11 +1,42 @@
-<h1>Our Cocktails:</h1>
-<ul>
-  <% @cocktails.each do |c| %>
-  <li>
-    <%= c.name %> |
-    <%= link_to "Details", cocktail_path(c) %>
-  </li>
-  <% end %>
-</ul>
+<div class="banner">
 
-<p><%= link_to "Add a new cocktail", new_cocktail_path %></p>
+  <div class="banner-content">
+
+    <div class="container">
+      <div class="row">
+        <% @cocktails.each do |c| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card">
+              <div class="card-category">Popular</div>
+              <div class="card-description">
+                <h2><%= c.name %></h2>
+                <p><%= link_to "Details", cocktail_path(c) %></p>
+              </div>
+              <%= link_to "", cocktail_path(c), class: "card-link" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="link-to-form">
+      <p><%= link_to "Add your own cocktail", new_cocktail_path %></p>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fa fa-github"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fa fa-heart"></i> while drinking at Le Wagon
+  </div>
+</div>

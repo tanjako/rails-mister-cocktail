@@ -9,11 +9,13 @@
 <% end %>
 
 <!-- add a new description -->
+<!-- form for looks for 2 parameters in def show!  -->
+
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <p>Add ingredients and quantity:</p>
   <%= f.input :description %>
   <%= f.input :ingredient_id, collection: Ingredient.all %>
-  <%= f.submit "Submit " %>
+  <%= f.submit "Add" %>
   <p></p>
 <% end %>
 
@@ -21,4 +23,3 @@
 <p><%= link_to 'Back', cocktails_path %></p>
 
 
-<!-- form for looks for 2 parameters in def show!  -->

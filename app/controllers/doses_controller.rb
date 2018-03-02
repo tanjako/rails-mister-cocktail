@@ -1,9 +1,4 @@
 class DosesController < ApplicationController
-  def new
-    @cocktail = Cocktail.find(params[:cocktail_id])
-    @dose = Dose.new
-    redirect_to cocktail_path(@cocktail)
-  end
 
   def create
     @cocktail = Cocktail.find(params[:cocktail_id])
@@ -12,8 +7,8 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
-      render 'cocktails/show'
-      # use this path an give me this page
+      flash[:error] = @dose.errors.full_messages.to_sentence
+      redirect_to cocktail_path(@cocktail)      # use this path an give me this page
     end
   end
 

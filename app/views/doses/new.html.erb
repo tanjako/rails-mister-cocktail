@@ -1,0 +1,11 @@
+!-- error message description -->
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <p>Add ingredients and quantity:</p>
+  <%= f.input :description %>
+  <%= f.input :ingredient_id, collection: Ingredient.all %>
+  <%= f.submit "Submit " %>
+  <p></p>
+<% end %>
+
+<p></p>
+<p><%= link_to 'Back', cocktails_path %></p>
