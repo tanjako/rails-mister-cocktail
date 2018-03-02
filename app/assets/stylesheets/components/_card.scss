@@ -2,10 +2,11 @@
   height: 175px;
   background-size: cover !important;
   background-position: center;
-  color: black;
+  color: white;
   position: relative;
-  background:whitesmoke;
+  background: transparent;
   margin: 10px 0;
+  border: 3px solid white;
 }
 .card-user {
   position: absolute;
@@ -35,8 +36,8 @@
   font-weight: lighter;
 }
 .card-description p a {
-  color: red;
-  font-size: 16px;
+  color: #FFB6B9;
+  font-size: 24px;
 }
 .card-link {
   position: absolute;
@@ -45,10 +46,10 @@
   right: 0;
   width: 100%;
   z-index: 2;
-  background: black;
+  background: #232855;
   opacity: 0;
 }
 .card-link:hover {
-  opacity: 0.1;
+  opacity: 0.3;
   text-decoration: none;
 }
