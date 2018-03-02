@@ -1,25 +1,29 @@
 <!-- list the cocktail with details -->
-<h2><%= @cocktail.name %></h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+  <h2><%= @cocktail.name %></h2>
 
 <!-- list all doses -->
-<h3>This cocktail has: </h3>
-<% @cocktail.doses.each do |dose| %>
-<li><%= dose.ingredient.name %> | <%= dose.description %> | <%= link_to "Delete", dose_path(dose), method: :delete %>
-</li>
-<% end %>
+  <h3>This cocktail has: </h3>
+  <% @cocktail.doses.each do |dose| %>
+  <li><%= dose.ingredient.name %> | <%= dose.description %> | <%= link_to "Delete", dose_path(dose), method: :delete %>
+  </li>
+  <% end %>
 
-<!-- add a new description -->
-<!-- form for looks for 2 parameters in def show!  -->
+  <!-- add a new description -->
+  <!-- form for looks for 2 parameters in def show!  -->
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <p>Add ingredients and quantity:</p>
-  <%= f.input :description %>
-  <%= f.input :ingredient_id, collection: Ingredient.all %>
-  <%= f.submit "Add" %>
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <p>Add ingredients and quantity:</p>
+    <%= f.input :description %>
+    <%= f.input :ingredient_id, collection: Ingredient.all %>
+    <%= f.submit "Add" %>
+    <p></p>
+  <% end %>
+
   <p></p>
-<% end %>
-
-<p></p>
-<p><%= link_to 'Back', cocktails_path %></p>
-
-
+  <p><%= link_to 'Back', cocktails_path %></p>
+  </div>
+  </div>
+</div>
