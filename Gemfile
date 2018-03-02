@@ -37,7 +37,6 @@ gem 'turbolinks', '~> 5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'pg'
 
 group :development, :test do
   gem 'pry-rails'
